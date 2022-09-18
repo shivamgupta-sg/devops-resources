@@ -1,5 +1,11 @@
 # Jenkins Introductions
 
+### Development Before Jenkins
+- Before the advent of Jenkins, developers had to complete code testing before they could check for errors. 
+- Developers on teams, tending to work independently, each created large segments of code to add to the base code. 
+- The entire source code would be checked for errors - a time-consuming and challenging undertaking. Multiple developers would each send commits to version control, increasing the time required to identify and fix bugs. 
+- There was no iterative code improvement, and the software delivery process was slow.
+
 ### What is Jenkins?
 - Jenkins is an open source automation server. 
 - It helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery. 
@@ -17,3 +23,9 @@
 - On April 20, 2016 version 2 was released with the Pipeline plugin enabled by default. The plugin allows for writing build instructions using a domain specific language based on Apache Groovy.
 - Jenkins replaced Hudson since February 8, 2017 in Eclipse.
 - In March 2018 Jenkins X software project for Kubernetes was publicly presented,with support for different cloud providers including AWS EKS among others.
+
+### Why Jenkins?
+- Jenkins is one of the top DevOps tools because it is free, open-source and modular, and can integrate with pretty much every other DevOps tool out there. 
+- There are over a thousand plugins that you can use to extend Jenkins’ capabilities and make it more user-specific. 
+- All of these plugins and extensions are developed in Java. 
+- This means that Jenkins can also be installed on any operating system that runs on Java.
