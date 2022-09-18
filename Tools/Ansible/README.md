@@ -7,18 +7,7 @@
 - Ansible is all about automation, it requires instructions to accomplish each job.
 - With everything written down in simple script form, it's easy to do version control.
 
-##How Ansible Works
-- In Ansible, there are two categories of computers: the control node and managed nodes.
-- The control node is a computer that runs Ansible. There must be at least one control node, although a backup control node may also exist. A managed node is any device being managed by the control node.
-- A managed node is any device being managed by the control node.
-- Ansible works by connecting to nodes (clients, servers, or whatever you're configuring) on a network, and then sending(pushing) a small program called an Ansible module to that node.
-- Ansible executes these modules over SSH and removes them when finished.
-- There are no additional servers, daemons, or databases required. Typically you'll work with your favorite terminal program, a text editor, and a version control system to keep track of changes to your content.
-- The only requirement for this interaction is that your Ansible control node has login access to the managed nodes. SSH keys are the most common way to provide access, but other forms of authentication are also supported.
-- Commanly SSH keys are used for the interaction between the control nodes and the managed node. Also the python should be present in managed nodes.
-- The term Ansible modules sounds complex, but most of the complexity is handled by Ansible and not the user.
-- An Ansible module is written to be a model of the desired state of a system, meaning that each module defines what should be true on any given managed node.
-- For Example: If a systems administrator decides that all workstations in an organization should have LibreOffice version X.Z installed, then it's up to Ansible's packaging module to determine whether each node has LibreOffice X.Z on it.
+
 
 ##Benefits
 - Free: Ansible is an open-source tool.

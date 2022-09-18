@@ -1,7 +1,7 @@
-#Continuous Delivery (CD)
+#Continuous Delivery/Deployment (CD)
 
 - Software Development practice where code changes are automatically prepared for a release to production
-- Continuous Delivery (CD) expands upon Continuous Integration (CI) by deploying all code changes to a testing environment and/or a production environment after the build stage
+- Continuous Delivery/Deployment (CD) expands upon Continuous Integration (CI) by deploying all code changes to a testing environment and/or a production environment after the build stage
 - When properly implemented, developers will always have a deployment-ready build artifact that has passed through a standardized test process. 
 
 ###Benefits:
