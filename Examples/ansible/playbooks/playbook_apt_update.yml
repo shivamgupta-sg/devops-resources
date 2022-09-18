@@ -1,0 +1,8 @@
+--- 
+- name: Playbook to install jenkins and docker
+  hosts: ec2
+  become: yes
+  # become_user: root
+  
+  roles:
+  - apt_update

@@ -1,0 +1,8 @@
+- name: Playbook to install jenkins and docker
+  hosts: ec2
+  
+  roles:
+    # - install_nginx
+    # - install_docker
+    # - install_mysql
+    - install_jenkins

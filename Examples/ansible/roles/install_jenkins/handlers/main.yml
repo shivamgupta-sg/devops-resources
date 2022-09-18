@@ -1,0 +1,14 @@
+---
+# handlers file for install_jenkins
+- name: jenkins daemon reload
+  # debug:
+  #   msg: Jenkins Daempn Reload
+  ansible.builtin.systemd:
+    daemon_reload: yes
+
+- name: Start jenkins
+  # debug:
+  #   msg: Starting Jenkins
+  ansible.builtin.systemd:
+    name: jenkins
+    state: started

@@ -1,0 +1,7 @@
+---
+# vars file for install_jenkins
+
+jenkins_apt_key: https://pkg.jenkins.io/debian-stable/jenkins.io.key 
+jenkins_apt_repo: deb https://pkg.jenkins.io/debian-stable binary/
+jenkins_repository: http://pkg.jenkins-ci.org/redhat/jenkins.repo
+jenkins_key: https://jenkins-ci.org/redhat/jenkins-ci.org.key

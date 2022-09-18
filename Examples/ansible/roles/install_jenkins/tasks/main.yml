@@ -1,0 +1,67 @@
+---
+# tasks file for install_jenkins
+
+- name: Install Jenkins on Debian
+  block:
+  - name: Install Java and GIT
+    apt:
+      name: 
+      - default-jdk
+      - git
+      state: present
+      update_cache: yes
+    become: yes
+
+  - name: ensure the jenkins apt repository key is installed
+    apt_key: 
+      url: "{{ jenkins_apt_key }}"
+      state: present
+    become: yes
+
+  - name: ensure the repository is configured
+    apt_repository: 
+      repo: "{{ jenkins_apt_repo }}" 
+      state: present
+    become: yes
+
+  - name: ensure jenkins is installed
+    apt: 
+      name: jenkins 
+      update_cache: yes
+    become: yes
+  when: ansible_os_family == 'Debian'
+
+- name: Install jenkins on RedHat
+  block:
+    - name: Install Java and GIT
+      yum:
+        name: 
+          - java
+          - git
+        state: present
+      become: yes
+
+    - name: Add Jenkins repository
+      get_url:
+        url: "{{ jenkins_repository }}"
+        dest: "/etc/yum.repos.d/jenkins.repo"
+      become: yes
+
+    - name: Import Jenkins key
+      command: "rpm --import {{ jenkins_key }}"
+      changed_when: false
+      become: yes
+
+    - name: Install Jenkins
+      package:
+        name: jenkins
+        state: present
+      become: yes
+  when: ansible_os_family == 'RedHat'
+
+- name: ensure jenkins is running and enabled
+  service: 
+    name: jenkins 
+    state: started
+    enabled: yes
+  become: yes

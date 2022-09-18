@@ -1,0 +1,7 @@
+---
+- name: Update yum
+  hosts: ec2
+  become: yes
+  
+  roles:
+  - yum_update
