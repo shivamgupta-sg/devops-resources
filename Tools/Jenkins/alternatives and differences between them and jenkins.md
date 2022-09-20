@@ -25,3 +25,16 @@ Travis CI offers following benefits:
 
 References:
 - https://www.guru99.com/jenkins-vs-travis.html#2
+
+## Concourse CI
+
+## Circle CI
+
+## TeamCity
+
+## GitLab
+
+## GitHub Actions
+
+## Bamboo
+
