@@ -8,3 +8,5 @@
 - Automate the Software Release Process
 - Improve Developer Productivity - more productive by freeing developers from manual tasks and encouraging behaviors that help reduce the number of errors and bugs deployed to customers
 - Find and address bugs quicker - 
+
+![Continuous Integration and Continuous Delivery](https://d1.awsstatic.com/product-marketing/DevOps/continuous_integration.4f4cddb8556e2b1a0ca0872ace4d5fe2f68bbc58.png)
