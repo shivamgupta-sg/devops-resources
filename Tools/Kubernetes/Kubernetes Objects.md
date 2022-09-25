@@ -12,10 +12,12 @@
 - Using client libraries
 
 ## Object Spec and Status
+
 - Spec: provided by user and describes the desired state for the object in yaml format
 - Status: describes the actual state of the coject in the cluster
 
 ---
+
 ## Pods
 
 - Single or multiple containers
@@ -38,6 +40,7 @@
 - Unknown
 
 ### Container States
+
 - Once Pod is assigned to a node by scheduler, kubelet starts creating containers using container runtime
 - Check the state of the container - `kubectl describe pod [POD_NAME]`
 - Waiting - requried operations
@@ -47,11 +50,11 @@
 ### Termination of Pods
 
 - Pods having running processes and no longer required, needs to be terminated
-- By default, all deletes are graceful with in 30 seconds 
+- By default, all deletes are graceful with in 30 seconds
 - `kubectl delete` commands supports the `--grace-period=<seconds>` option
 - Force deletion of a Pod deleted it from the cluster state and etcd immediately
 
-------------
+---
 
 ## Kubernetes Object Management
 
