@@ -7,7 +7,6 @@
 - The ***control plane*** manages the worker nodes and the Pods in the cluster
 - In production environments, the control plane usually runs across multiple computers and a cluster usually runs multiple nodes, providing fault-tolerance and high availability
 
-
 ## Control Plane Components
 
 - The control plane's components make global decisions about the cluster (for example, scheduling), as well as detecting and responding to cluster events (for example, starting up a new pod when a deployment's replicas field is unsatisfied).
@@ -43,11 +42,12 @@ Some types of these controllers are:
 - **Job controller**: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
 - **Endpoints controller**: Populates the Endpoints object (that is, joins Services & Pods).
 - **Service Account & Token controllers**: Create default accounts and API access tokens for new namespaces
+- **Replication Controller**: Responsible for maintaining correct number of pods for every replication controller in the system
 
-### cloud-controller-manager 
+### cloud-controller-manager
 
 - A Kubernetes control plane component that embeds cloud-specific control logic. - The cloud controller manager lets you link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that only interact with your cluster.
-- The cloud-controller-manager only runs controllers that are specific to your cloud provider. 
+- The cloud-controller-manager only runs controllers that are specific to your cloud provider.
 - If you are running Kubernetes on your own premises, or in a learning environment inside your own PC, the cluster does not have a cloud controller manager.
 - As with the kube-controller-manager, the cloud-controller-manager combines several logically independent control loops into a single binary that you run as a single process
 - You can scale horizontally (run more than one copy) to improve performance or to help tolerate failures.
@@ -58,7 +58,6 @@ The following controllers can have cloud provider dependencies:
 - **Route controller**: For setting up routes in the underlying cloud infrastructure
 - **Service controller**: For creating, updating and deleting cloud provider load balancers
 
-
 ## Node Components
 
 - Node components run on every node, maintaining running pods and providing the Kubernetes runtime environment.
@@ -67,7 +66,7 @@ The following controllers can have cloud provider dependencies:
 
 - An agent that runs on each node in the cluster
 - It makes sure that containers are running in a Pod
-- The kubelet takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy. 
+- The kubelet takes a set of PodSpecs that are provided through various mechanisms and ensures that the containers described in those PodSpecs are running and healthy.
 - The kubelet doesn't manage containers which were not created by Kubernetes.
 
 ### kube-proxy
@@ -75,7 +74,7 @@ The following controllers can have cloud provider dependencies:
 - kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept.
 - kube-proxy maintains network rules on nodes
 - These network rules allow network communication to your Pods from network sessions inside or outside of your cluster
-- kube-proxy uses the operating system packet filtering layer if there is one and it's available. 
+- kube-proxy uses the operating system packet filtering layer if there is one and it's available.
 - Otherwise, kube-proxy forwards the traffic itself.
 
 ### Container runtime
@@ -83,10 +82,9 @@ The following controllers can have cloud provider dependencies:
 - The container runtime is the software that is responsible for running containers
 - Kubernetes supports container runtimes such as containerd, CRI-O, and any other implementation of the Kubernetes CRI (Container Runtime Interface)
 
-
 ## Addons
 
-- Addons use Kubernetes resources (DaemonSet, Deployment, etc) to implement cluster features. 
+- Addons use Kubernetes resources (DaemonSet, Deployment, etc) to implement cluster features.
 - These provides cluster-level features, namespaced resources for addons belong within the kube-system namespace.
 - Selected addons are described below; for an extended list of available addons, please see [Addons](https://kubernetes.io/docs/concepts/cluster-administration/addons/).
 
@@ -98,7 +96,7 @@ The following controllers can have cloud provider dependencies:
 
 ### Web UI (Dashboard)
 
-- Dashboard is a general purpose, web-based UI for Kubernetes clusters. 
+- Dashboard is a general purpose, web-based UI for Kubernetes clusters.
 - It allows users to manage and troubleshoot applications running in the cluster, as well as the cluster itself.
 
 ### Container Resource Monitoring
@@ -108,4 +106,3 @@ The following controllers can have cloud provider dependencies:
 ### Cluster-level Logging
 
 - A cluster-level logging mechanism is responsible for saving container logs to a central log store with search/browsing interface
-

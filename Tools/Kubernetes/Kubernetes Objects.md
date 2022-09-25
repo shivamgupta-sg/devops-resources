@@ -15,7 +15,7 @@
 - Spec: provided by user and describes the desired state for the object in yaml format
 - Status: describes the actual state of the coject in the cluster
 
-
+---
 ## Pods
 
 - Single or multiple containers
@@ -51,6 +51,8 @@
 - `kubectl delete` commands supports the `--grace-period=<seconds>` option
 - Force deletion of a Pod deleted it from the cluster state and etcd immediately
 
+------------
+
 ## Kubernetes Object Management
 
 - Imperative commands - operates directly on the live objects
@@ -62,4 +64,12 @@
 - Imperative Object Configration - specify file containg full object definition
   - `kubectl apply -f config1.yaml`
   - `kubectl apply -f config2.yaml`
-  - Configuration 
+  - Configuration is simple to understand and can mbe source controlled
+  - Reuires additional step of creating YAML file
+  
+- Declarative Object Configration - user does not define the operations to be taken
+  - Create, updatre, and delete operations are automatically detected per-object by kubectl
+  - `kubectl diff -f configs/`
+  - `kubectl apply -f <directory>/`
+  - Better support for operating on directories and automatically detecting operation types
+  - Harder to debug and understand results
