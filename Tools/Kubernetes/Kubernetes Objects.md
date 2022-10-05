@@ -76,3 +76,29 @@
   - `kubectl apply -f <directory>/`
   - Better support for operating on directories and automatically detecting operation types
   - Harder to debug and understand results
+
+### Names
+
+- Nane is unique for a type of  resource withing a namespace
+- Two different namespace can have a pod with same name
+- UID is unique across the whole cluster
+- Kubernetes resourcew can have names upto 253 character long
+- aloowed characte - digits (0-9), lowercase letters(a-z), hypen(-) and dot(.)
+
+### Namespaces
+
+- `kubectl get namespace` get namespaces of the entire cluster
+- **Default Namespaces** created ny kubernetes cluster
+  - default: for objects with no specified namespace
+  - kube-system: objects created by the kubernetes system
+  - kube-public: reserverd for cluster usage. In case if any resource is
+  - kube-node-lease: contains lease objects
+-While creating a new object, we can either specify the namespace or we we can set context for all subsequent kubectl commands
+  - `kubectl run nginx --image=nginx --namespace=<namespace-name>`
+  - `kubectl config set-context --current --image=nginx --namespace=<namespace-name>`
+- Create a new namespace
+  - `kubectl create namespace <namespace-name>`
+- Look for pods in a specified namespace
+- List objects across all namespaces
+- See chich Kubernetes resources are and aren't in a namespace
+  - 
