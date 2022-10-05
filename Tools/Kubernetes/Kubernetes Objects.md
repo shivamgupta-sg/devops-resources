@@ -101,4 +101,12 @@
 - Look for pods in a specified namespace
 - List objects across all namespaces
 - See chich Kubernetes resources are and aren't in a namespace
-  - 
+
+
+## Service
+- Pods are ephemeral and are recreated frequently
+- On creation pod have get a new IP
+- We can not use pod IPs which keeps changing for the application to access, so we use servicesto communicate with them
+- Services and Pod Lifecycle is not linked so even if the pod is recreated the service IP doesnot get changed make it easy to access the application running on the pod
+- It provides a permanent IP address which can be used to communicate with Pods
+- Helps in load balancing 
