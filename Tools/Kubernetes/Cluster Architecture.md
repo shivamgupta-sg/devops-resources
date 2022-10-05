@@ -10,3 +10,8 @@
 
 ## Basic Architecture
 ![kubernetes architecture.jpg](https://ibb.co/bLBBFGW)
+
+- Master - Slave architecture
+- Master manages all workers
+- Actual works are done by workers
+- 
